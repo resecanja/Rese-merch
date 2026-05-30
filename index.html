@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://merch.rese.com.br/">
 <meta property="og:title" content="Loja Rese | Camiseta, Vinil e Mini Vinil NFC">
 <meta property="og:description" content="Camiseta, vinil 12 polegadas e mini vinil com NFC do album Enquanto Isso.">
-<meta property="og:image" content="https://rese.com.br/enquantoisso/img/capa.jpg">
+<meta property="og:image" content="https://merch.rese.com.br/camiseta-frente.jpg">
 <meta property="og:locale" content="pt_BR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@resegram">
@@ -49,19 +49,6 @@ img,svg{display:block;max-width:100%}
 .card:hover{transform:translateY(-4px);box-shadow:0 20px 60px rgba(22,18,15,.32)}
 .card-media{position:relative;aspect-ratio:1/1;background:var(--cream);overflow:hidden;display:flex;align-items:center;justify-content:center}
 .card-media img{width:100%;height:100%;object-fit:cover}
-.card-media.tee{background:linear-gradient(135deg,#e8dec9 0%,#cab999 100%);color:var(--ink);font-family:var(--type);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px}
-.card-media.tee .label{font-size:12px;letter-spacing:.5em;margin-bottom:10px;color:rgba(22,18,15,.55)}
-.card-media.tee .title{font-family:var(--serif);font-size:48px;font-style:italic;line-height:.95;margin-bottom:10px;color:var(--ink)}
-.card-media.tee .line{width:50px;height:2px;background:var(--red);margin:8px auto}
-.card-media.tee .sub{font-size:11px;letter-spacing:.4em;color:rgba(22,18,15,.55)}
-.card-media.mini{position:relative}
-.card-media.mini .vinyl{position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,#1c1614 0%,#0a0706 38%,#1a1412 40%,#0a0706 55%,#1a1412 57%,#0a0706 95%);border-radius:50%;margin:8% auto;width:84%;height:84%;left:8%;top:8%}
-.card-media.mini .label-c{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:40%;aspect-ratio:1/1;border-radius:50%;background:radial-gradient(circle at 50% 50%,#e8dec9,#cab999);display:flex;align-items:center;justify-content:center;flex-direction:column;font-family:var(--type);text-align:center;color:#1a1412}
-.card-media.mini .label-c .ti{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1}
-.card-media.mini .label-c .ar{font-size:7px;letter-spacing:.3em;opacity:.7;margin-bottom:4px}
-.card-media.mini .label-c .ln{width:18px;height:1.5px;background:var(--red);margin:6px auto 4px}
-.card-media.mini .label-c .nfc{font-size:6px;letter-spacing:.3em;opacity:.7}
-.card-media.mini .nfc-tag{position:absolute;top:14%;right:12%;width:48px;height:48px;border-radius:50%;background:var(--pink);border:2px solid #fff;color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--type);font-size:10px;letter-spacing:.1em;font-weight:bold}
 .badge{position:absolute;top:12px;left:12px;background:var(--ink);color:var(--paper);font-family:var(--type);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:4px 9px;border-radius:2px;z-index:2}
 .badge.pre{background:var(--red)}
 .card-info{padding:22px 22px 24px;background:var(--paper);border-top:1px solid rgba(22,18,15,.06)}
@@ -108,12 +95,9 @@ img,svg{display:block;max-width:100%}
 </section>
 <main class="grid">
 <article class="card" id="camiseta">
-<div class="card-media tee">
+<div class="card-media">
 <span class="badge">Pronta entrega</span>
-<div class="label">ENQUANTO</div>
-<div class="title">Isso</div>
-<div class="line"></div>
-<div class="sub">R &middot; E &middot; S &middot; E</div>
+<img src="camiseta-frente.jpg" alt="Camiseta Enquanto Isso" loading="lazy">
 </div>
 <div class="card-info">
 <p class="card-subtitle">Camiseta</p>
@@ -129,17 +113,12 @@ Pedir
 </div>
 </article>
 <article class="card" id="mini-vinil">
-<div class="card-media mini">
+<div class="card-media">
 <span class="badge pre">Pr&eacute;-venda</span>
-<div class="vinyl"></div>
-<div class="label-c">
-<div class="ar">RESE</div>
-<div class="ti">Enquanto</div>
-<div class="ti">Isso</div>
-<div class="ln"></div>
-<div class="nfc">N &middot; F &middot; C</div>
-</div>
-<div class="nfc-tag">TAP</div>
+<picture>
+<source srcset="mini-capa.HEIC" type="image/heic">
+<img src="mini-capa.HEIC" alt="Mini Vinil Enquanto Isso" loading="lazy" onerror="this.parentElement.parentElement.innerHTML+='<div style=&quot;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:linear-gradient(135deg,#e8dec9,#cab999);color:#1a1412;font-family:Special Elite,serif;text-align:center;padding:20px;&quot;><div style=&quot;font-size:10px;letter-spacing:.4em;opacity:.6;margin-bottom:6px;&quot;>RESE</div><div style=&quot;font-family:DM Serif Display,Georgia,serif;font-style:italic;font-size:32px;line-height:1;&quot;>Enquanto Isso</div><div style=&quot;width:40px;height:2px;background:#c9342a;margin:14px auto;&quot;></div><div style=&quot;font-size:10px;letter-spacing:.3em;opacity:.7;&quot;>MINI VINIL &middot; NFC</div></div>'">
+</picture>
 </div>
 <div class="card-info">
 <p class="card-subtitle">Mini Vinil 7" com NFC</p>
@@ -157,7 +136,7 @@ Pedir
 <article class="card" id="vinil">
 <div class="card-media">
 <span class="badge pre">Pr&eacute;-venda</span>
-<img src="https://rese.com.br/enquantoisso/img/capa.jpg" alt="Album Enquanto Isso" loading="lazy">
+<img src="https://rese.com.br/enquantoisso/img/capa.jpg" alt="Vinil 12 polegadas Enquanto Isso" loading="lazy">
 </div>
 <div class="card-info">
 <p class="card-subtitle">Vinil 12" &middot; 33&frac13; RPM</p>
