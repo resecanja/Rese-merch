@@ -1,0 +1,9 @@
+# Block direct access to config and order log
+<FilesMatch "^(mp-config\.php|orders\.log)$">
+    Require all denied
+</FilesMatch>
+
+# Allow CORS preflight for create-preference and webhook
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+</IfModule>
