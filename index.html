@@ -21,7 +21,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
---bg:#0a0807;--bg-soft:#15110f;--bg-mute:#1f1815;
+--bg:#0a0807;--bg-soft:#15110f;
 --paper:#ece4d3;--paper-mute:rgba(236,228,211,.55);--paper-dim:rgba(236,228,211,.32);
 --pink:#ec5e8f;--pink-soft:#f3658f;--gold:#b8891c;--red:#c9342a;
 --display:'Anton','Bebas Neue',Impact,sans-serif;
@@ -35,60 +35,54 @@ a{color:inherit;text-decoration:none}
 img,svg{display:block;max-width:100%}
 
 .top{position:sticky;top:0;z-index:50;background:rgba(10,8,7,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(236,228,211,.06);padding:calc(12px + env(safe-area-inset-top)) 24px 12px}
-.top-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.top-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;font-family:var(--type);font-size:16px;letter-spacing:.06em;color:var(--paper)}
 .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--pink);display:inline-block}
 .top-nav{display:flex;align-items:center;gap:18px;font-family:var(--type);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--paper-mute)}
 .top-nav a:hover{color:var(--pink)}
 
-.hero{position:relative;max-width:1200px;margin:0 auto;padding:48px 24px 8px;text-align:left}
-.hero-mini{font-family:var(--type);font-size:11px;letter-spacing:.3em;text-transform:uppercase;color:var(--paper-dim);margin-bottom:8px}
-.hero-mini::before,.hero-mini::after{content:'(';color:var(--pink);margin:0 8px}
-.hero-mini::after{content:')'}
-.merch-title{font-family:var(--display);font-size:clamp(110px,22vw,260px);color:var(--pink);letter-spacing:-.01em;line-height:.82;text-transform:uppercase;font-weight:400;display:block}
-.hero-sub{font-family:var(--type);font-size:13px;letter-spacing:.06em;color:var(--paper-mute);margin-top:14px;max-width:520px;line-height:1.6}
+.merch-section{max-width:1280px;margin:0 auto;padding:54px 32px 80px;position:relative}
+.merch-head{display:flex;align-items:baseline;gap:18px;margin-bottom:36px;flex-wrap:wrap}
+.merch-title{font-family:var(--display);font-size:clamp(56px,8vw,108px);color:var(--pink);letter-spacing:.005em;line-height:.9;text-transform:uppercase;font-weight:400}
+.merch-sub{font-family:var(--type);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--paper-dim)}
+.merch-sub::before,.merch-sub::after{content:'(';color:var(--pink);margin:0 8px}
+.merch-sub::after{content:')'}
 
-.collage{position:relative;max-width:1200px;margin:0 auto;padding:40px 24px 60px}
-.col-rail{position:absolute;top:0;bottom:0;left:0;width:20px;display:flex;flex-direction:column;justify-content:center;align-items:center;font-family:var(--type);font-size:10px;letter-spacing:.4em;color:var(--paper-dim);writing-mode:vertical-rl;text-orientation:mixed;text-transform:uppercase;pointer-events:none}
-.col-rail.r{left:auto;right:0}
-.col-rail.r .label{transform:rotate(180deg)}
+.collage{display:grid;gap:48px 24px;grid-template-columns:1fr;align-items:start}
+@media(min-width:760px){
+.collage{grid-template-columns:repeat(3,1fr);gap:36px 28px;align-items:end}
+.product--camiseta{transform:translateY(0) rotate(-.8deg)}
+.product--mini{transform:translateY(28px) rotate(.6deg)}
+.product--vinil{transform:translateY(-12px) rotate(-.4deg)}
+}
 
-.products{display:grid;gap:48px;grid-template-columns:1fr;padding:0 24px}
-.product{position:relative;display:flex;flex-direction:column;gap:18px}
+.product{display:flex;flex-direction:column;gap:14px;position:relative}
 .product-photo{position:relative;display:block;overflow:visible}
-.product-photo img{width:100%;height:auto;display:block;box-shadow:0 20px 60px rgba(0,0,0,.55),0 2px 8px rgba(0,0,0,.4);transform-origin:center}
-.product-tag{position:absolute;top:14px;left:14px;background:var(--pink);color:#1a0a12;font-family:var(--type);font-size:10px;letter-spacing:.18em;text-transform:uppercase;padding:5px 10px;border-radius:1px;z-index:2;font-weight:bold}
-.product-tag.pre{background:var(--paper);color:var(--bg)}
-.product-meta{display:flex;flex-direction:column;gap:6px}
-.product-sub{font-family:var(--type);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--pink)}
-.product-title{font-family:var(--display);font-size:42px;line-height:.95;color:var(--paper);text-transform:uppercase;letter-spacing:-.005em;font-weight:400}
-.product-desc{font-family:var(--type);font-size:13px;line-height:1.6;color:var(--paper-mute);margin-bottom:6px}
-.product-row{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap}
-.price{font-family:var(--display);font-size:46px;color:var(--paper);line-height:1;letter-spacing:-.01em}
-.price .c{font-family:var(--type);font-size:13px;vertical-align:top;margin-right:4px;color:var(--pink);letter-spacing:.1em;display:inline-block;margin-top:6px}
-.price .f{display:block;font-family:var(--type);font-size:10px;letter-spacing:.12em;color:var(--paper-dim);text-transform:uppercase;margin-top:4px;font-weight:normal}
-.actions{flex:1;display:flex;gap:10px;justify-content:flex-end;flex-wrap:wrap}
-.btn{background:var(--pink);color:#0a0807;border:none;cursor:pointer;padding:13px 22px;border-radius:2px;font-family:var(--type);font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:bold;transition:background .18s,transform .15s,box-shadow .15s;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-decoration:none;box-shadow:0 4px 14px rgba(236,94,143,.25)}
+.product-photo img{width:100%;height:auto;display:block;aspect-ratio:1/1;object-fit:cover;box-shadow:0 18px 44px rgba(0,0,0,.55),0 2px 6px rgba(0,0,0,.45);transform-origin:center;border:1px solid rgba(236,228,211,.04)}
+.product-tag{position:absolute;top:12px;left:12px;background:var(--pink);color:#1a0a12;font-family:var(--type);font-size:9px;letter-spacing:.18em;text-transform:uppercase;padding:4px 9px;border-radius:1px;z-index:2;font-weight:bold}
+.product-tag.pre{background:rgba(236,228,211,.92);color:var(--bg)}
+.product-label{text-align:center;font-family:var(--type);font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--pink);margin-top:-4px}
+.product-label::before,.product-label::after{content:'(';color:var(--paper-dim);margin:0 6px}
+.product-label::after{content:')'}
+
+.product-body{padding:8px 4px 0;display:flex;flex-direction:column;gap:10px}
+.product-sub{font-family:var(--type);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--paper-dim)}
+.product-title{font-family:var(--display);font-size:32px;line-height:.95;color:var(--paper);text-transform:uppercase;letter-spacing:.005em;font-weight:400}
+.product-desc{font-family:var(--type);font-size:12px;line-height:1.6;color:var(--paper-mute)}
+.product-row{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-top:6px}
+.price{font-family:var(--display);font-size:38px;color:var(--paper);line-height:1;letter-spacing:.005em}
+.price .c{font-family:var(--type);font-size:11px;vertical-align:top;margin-right:3px;color:var(--pink);letter-spacing:.1em;display:inline-block;margin-top:5px}
+.price .f{display:block;font-family:var(--type);font-size:9px;letter-spacing:.14em;color:var(--paper-dim);text-transform:uppercase;margin-top:4px;font-weight:normal}
+.actions{flex:1;display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap;min-width:160px}
+.btn{background:var(--pink);color:#0a0807;border:none;cursor:pointer;padding:11px 18px;border-radius:2px;font-family:var(--type);font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:bold;transition:background .18s,transform .15s,box-shadow .15s;display:inline-flex;align-items:center;justify-content:center;gap:7px;text-decoration:none;box-shadow:0 4px 14px rgba(236,94,143,.22)}
 .btn:hover{background:#ff7aaa;transform:translateY(-2px);box-shadow:0 8px 22px rgba(236,94,143,.45)}
 .btn:disabled{opacity:.55;cursor:wait;transform:none;background:var(--paper-dim);color:var(--paper)}
-.btn svg{width:14px;height:14px}
-.btn-wa{background:transparent;color:var(--paper-mute);border:1px solid rgba(236,228,211,.18);padding:11px 14px;font-size:10px;letter-spacing:.12em;box-shadow:none;font-weight:normal}
-.btn-wa:hover{background:rgba(236,228,211,.08);color:var(--paper);transform:none;box-shadow:none}
-.pay-row{margin-top:10px;display:flex;align-items:center;gap:8px;font-family:var(--type);font-size:10px;letter-spacing:.12em;color:var(--paper-dim);text-transform:uppercase;flex-wrap:wrap}
+.btn svg{width:13px;height:13px}
+.btn-wa{background:transparent;color:var(--paper-mute);border:1px solid rgba(236,228,211,.18);padding:9px 12px;font-size:9px;letter-spacing:.14em;box-shadow:none;font-weight:normal}
+.btn-wa:hover{background:rgba(236,228,211,.06);color:var(--paper);transform:none;box-shadow:none}
+.pay-row{margin-top:8px;display:flex;align-items:center;gap:7px;font-family:var(--type);font-size:9px;letter-spacing:.14em;color:var(--paper-dim);text-transform:uppercase;flex-wrap:wrap}
 .pay-row .mp{color:var(--paper-mute)}
-.err{margin-top:6px;font-family:var(--type);font-size:11px;color:var(--pink-soft);min-height:14px}
-
-@media(min-width:880px){
-.collage{padding:60px 56px 100px}
-.products{grid-template-columns:repeat(12,1fr);gap:72px 36px;padding:0}
-.product{grid-column:span 12}
-.product--camiseta{grid-column:1 / span 7;grid-row:1}
-.product--camiseta .product-photo{transform:rotate(-1.5deg)}
-.product--mini{grid-column:7 / span 6;grid-row:2;margin-top:-40px;z-index:2}
-.product--mini .product-photo{transform:rotate(2deg)}
-.product--vinil{grid-column:2 / span 7;grid-row:3;margin-top:-40px}
-.product--vinil .product-photo{transform:rotate(-1deg)}
-}
+.err{margin-top:4px;font-family:var(--type);font-size:11px;color:var(--pink-soft);min-height:14px}
 
 .footer{background:var(--bg);color:var(--paper-mute);padding:48px 24px calc(40px + env(safe-area-inset-bottom));text-align:center;font-family:var(--type);font-size:12px;letter-spacing:.06em;border-top:1px solid rgba(236,228,211,.06)}
 .footer a{color:var(--paper)}
@@ -100,15 +94,13 @@ img,svg{display:block;max-width:100%}
 .top{padding:calc(10px + env(safe-area-inset-top)) 16px 10px}
 .top-nav{gap:12px;font-size:11px}
 .top-nav .hm{display:none}
-.hero{padding:36px 18px 4px}
-.hero-mini{font-size:10px}
-.merch-title{font-size:clamp(86px,30vw,140px)}
-.collage{padding:24px 14px 50px}
-.products{gap:54px;padding:0}
-.product-title{font-size:34px}
-.price{font-size:38px}
+.merch-section{padding:36px 18px 60px}
+.merch-head{margin-bottom:24px;gap:10px}
+.merch-title{font-size:clamp(58px,14vw,86px)}
+.product-title{font-size:28px}
+.price{font-size:34px}
 .actions{justify-content:stretch;width:100%}
-.btn{flex:1;min-width:140px}
+.btn{flex:1;min-width:130px}
 .btn-wa{flex:0 0 auto}
 }
 </style>
@@ -124,20 +116,20 @@ img,svg{display:block;max-width:100%}
 </nav>
 </div>
 </header>
-<section class="hero">
-<p class="hero-mini">a loja</p>
-<span class="merch-title">MERCH</span>
-<p class="hero-sub">Camiseta, vinil 12&Prime; e mini vinil 7&Prime; com NFC do &aacute;lbum Enquanto Isso.</p>
-</section>
-<section class="collage">
-<div class="products">
+<section class="merch-section">
+<div class="merch-head">
+<h1 class="merch-title">MERCH</h1>
+<span class="merch-sub">a loja</span>
+</div>
+<div class="collage">
 
 <article class="product product--camiseta" id="camiseta">
 <div class="product-photo">
 <span class="product-tag">Pronta entrega</span>
 <img src="camiseta-frente.jpg" alt="Camiseta Enquanto Isso" loading="lazy">
 </div>
-<div class="product-meta">
+<p class="product-label">tshirt</p>
+<div class="product-body">
 <p class="product-sub">Camiseta</p>
 <h2 class="product-title">Enquanto Isso</h2>
 <p class="product-desc">Camiseta creme com a arte do &aacute;lbum.</p>
@@ -161,7 +153,8 @@ Comprar
 <span class="product-tag pre">Pr&eacute;-venda</span>
 <img src="mini-capa.jpg" alt="Mini Vinil Enquanto Isso" loading="lazy">
 </div>
-<div class="product-meta">
+<p class="product-label">nfc</p>
+<div class="product-body">
 <p class="product-sub">Mini Vinil 7&Prime; com NFC</p>
 <h2 class="product-title">Toque e ou&ccedil;a</h2>
 <p class="product-desc">Encosta no celular, abre o &aacute;lbum no streaming.</p>
@@ -185,7 +178,8 @@ Comprar
 <span class="product-tag pre">Pr&eacute;-venda</span>
 <img src="vinil-lp.jpg" alt="Vinil 12 polegadas Enquanto Isso" loading="lazy">
 </div>
-<div class="product-meta">
+<p class="product-label">vinyl</p>
+<div class="product-body">
 <p class="product-sub">Vinil 12&Prime; &middot; 33&frac13; RPM</p>
 <h2 class="product-title">Enquanto Isso</h2>
 <p class="product-desc">Disco em vinil 12 polegadas.</p>
